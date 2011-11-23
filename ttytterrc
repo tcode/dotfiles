@@ -1,0 +1,21 @@
+#TTYtter settings
+avatar=eog %U&
+urlopen=firefox %U&
+ssl=1
+pause=auto
+mentions=1
+ansi=1
+vcheck=1
+newline=1
+hold=15
+backload=40
+simplestart=1
+verify=1
+readline="ttytter stormdragon2976 colindean vkoser reuteras "
+#exts=/home//ttytter-extensions/libnotifyperl.pl,/home//ttytter-extensions/soundpack.pl,/home//ttytter-extensions/timestamp.pl,/home//ttytter-extensions/rate_limit.pl,/home//ttytter-extensions/client.pl
+#notifytype=libnotifyperl,soundpack
+extpref_soundpack=default
+notifies=dm,me,reply,search,default
+#end TTYtter settings
+
+user=havlfisk:lindgaard112
