@@ -18,4 +18,3 @@ extpref_soundpack=default
 notifies=dm,me,reply,search,default
 #end TTYtter settings
 
-user=USERNAME:PASSWORD
