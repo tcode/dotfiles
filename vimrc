@@ -37,7 +37,7 @@ endif
 
 " Mappings.
 let mapleader = ","
-nmap <leader>e :e $MYVIMRC<CR>
+nmap <leader>e :e ~/dotfiles/vimrc<CR>
 nmap <leader>w :w %<CR>
 nmap <leader>sp :sp<CR>
 ino .. <esc>
@@ -67,4 +67,4 @@ iab taht that
 
 source /home/tobias/.vim/syntax/go.vim
 
-set path=expand('%')
+set path=expand('%:p:h')
