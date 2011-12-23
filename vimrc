@@ -1,3 +1,10 @@
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+call pathogen#infect()
+syntax on
+filetype plugin indent on
+
+
 set number 
 set expandtab
 set nocompatible
@@ -40,8 +47,7 @@ let mapleader = ","
 nmap <leader>e :e ~/dotfiles/vimrc<CR>
 nmap <leader>w :w %<CR>
 nmap <leader>sp :sp<CR>
-ino .. <esc>
-
+nnoremap <Leader>f :e <C-R>=expand('%:p:h') . '/'<CR>
 
 " Commands
 command! -nargs=* Wrap set wrap linebreak nolist
@@ -63,8 +69,7 @@ iab teh the
 iab taht that
 
 
-"Source 
+" Source 
 
 source /home/tobias/.vim/syntax/go.vim
 
-set path=expand('%:p:h')

@@ -14,6 +14,7 @@ alias ls='ls --color'
 alias g='gvim --remote-silent'
 alias gist='git status' #gst is taken on my system, as I have gnu smalltalk....
 alias gico='git checkout'
+alias bs='byobu-select-session'
 
 autoload -U promptinit && promptinit
 prompt fade
