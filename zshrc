@@ -17,4 +17,4 @@ alias gico='git checkout'
 alias bs='byobu-select-session'
 
 autoload -U promptinit && promptinit
-prompt fade
+prompt fade # I just happen to like the look of this theme....
