@@ -1,0 +1,48 @@
+(in-package :stumpwm)
+(message "Loading rc!")
+(set-prefix-key (kbd "Menu"))
+
+
+(load "/home/tobias/slime-2012-02-28/swank-loader.lisp")
+(swank-loader:init)
+(defvar *swank-p* nil)
+
+(defcommand swank () ()
+  "Starts a swank server on port 4005 and notifies the user."
+  (setf stumpwm:*top-level-error-action* :break)
+  (if *swank-p*
+      (message "Swank server already running.")
+    (progn
+      (swank:create-server :port 4005
+			   :style swank:*communication-style*
+			   :dont-close t)
+      (setf *swank-p* t)
+      (message "Starting swank on port 4005."))))
+
+(defcommand conkeror () ()
+  "Run Conkeror"
+  (run-or-raise "conkeror" '(:instance "Conkeror")))
+
+
+(defcommand vlc () ()
+  "Run vlc"
+  (run-or-raise "vlc" '(:instance "VLC")))
+
+(defcommand xpdf () ()
+  "run xpdf"
+  (run-or-raise "xpdf" '(:instance "xpdf")))
+
+
+(define-key *root-map* (kbd "C-k") "conkeror")
+(define-key *root-map* (kbd "C-v") "vlc")
+(define-key *root-map* (kbd "C-x") "xpdf")
+
+(if (not (head-mode-line (current-head)))
+    (toggle-mode-line (current-screen)
+		      (current-head)))
+
+(setf stumpwm:*screen-mode-line-format*
+      (list "%W | "
+	    '(:eval (stumpwm:run-shell-command "date" t))))
+
+(define-key *root-map* (kbd "C-f") "fullscreen")
